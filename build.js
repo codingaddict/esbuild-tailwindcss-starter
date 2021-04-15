@@ -1,4 +1,5 @@
 const esbuild = require("esbuild");
+const open = require("open");
 const postCssPlugin = require("esbuild-plugin-postcss2").default;
 esbuild
   .serve(
@@ -36,8 +37,10 @@ esbuild
       ],
     }
   )
-  .then(({ host, port }) => {
-    console.log(`Serving at ${host}:${port}`);
+  .then(async ({ port }) => {
+    const url = `http://localhost:${port}`;
+    console.log(`Serving at ${url}`);
+    await open(url);
   })
   // .then(({ warnings }) => {
   //   console.log(
