@@ -1,7 +1,6 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@tailwindcss/jit': ^0.1.18
   autoprefixer: ^10.2.5
   esbuild: ^0.11.8
   esbuild-plugin-postcss2: ^0.0.9
@@ -19,7 +18,6 @@ dependencies:
   react-virtualized: 9.22.3_react-dom@17.0.2+react@17.0.2
 
 devDependencies:
-  '@tailwindcss/jit': 0.1.18_postcss@8.2.10+tailwindcss@2.1.1
   autoprefixer: 10.2.5_postcss@8.2.10
   esbuild: 0.11.8
   esbuild-plugin-postcss2: 0.0.9
@@ -66,25 +64,6 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.4
       fastq: 1.11.0
-    dev: true
-
-  /@tailwindcss/jit/0.1.18_postcss@8.2.10+tailwindcss@2.1.1:
-    resolution: {integrity: sha512-WNSEiwbggtO9n6+ok2fFdYmhqY20oqLmB82H23nY8P5WzijZbIshojoY3s/OvPD7cmvzkweZ6LLKGWuDS1/vLA==}
-    peerDependencies:
-      postcss: ^8.2.6
-      tailwindcss: ^2.0.3
-    dependencies:
-      chokidar: 3.5.1
-      dlv: 1.1.3
-      fast-glob: 3.2.5
-      lodash.topath: 4.5.2
-      normalize-path: 3.0.0
-      object-hash: 2.1.1
-      parse-glob: 3.0.4
-      postcss: 8.2.10
-      postcss-selector-parser: 6.0.4
-      quick-lru: 5.1.1
-      tailwindcss: 2.1.1_02ae6d0a5709fa7b5d38be2fad8eebc6
     dev: true
 
   /acorn-node/1.8.2:

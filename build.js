@@ -8,8 +8,13 @@ esbuild
       platform: "browser",
       entryPoints: ["src/index.js"],
       outdir: "dist",
+      logLevel: "info",
+      logLimit: 0,
       bundle: true,
       sourcemap: true,
+      define: {
+        "process.env.NODE_ENV": '"development"',
+      },
       // watch: {
       //   onRebuild(error, result) {
       //     if (error) console.error("watch build failed:", error);
@@ -23,7 +28,7 @@ esbuild
         postCssPlugin({
           plugins: [
             require("postcss-import"),
-            require("@tailwindcss/jit"),
+            require("tailwindcss"),
             require("autoprefixer"),
             require("postcss-preset-env")({ stage: 1 }),
           ],
