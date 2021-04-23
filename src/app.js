@@ -19,9 +19,11 @@ const stopPropagationPreventDefault = (e) => {
 };
 const App = () => {
     const [isFileDraggedOver, setIsFileDraggedOver] = useState(false);
+    const [isUploaded, setIsUploaded] = useState(false);
     const setDragActive = useCallback((e) => {
         stopPropagationPreventDefault(e);
         setIsFileDraggedOver(true);
+        setIsUploaded(false);
     }, []);
     const setDragInActive = useCallback((e) => {
         stopPropagationPreventDefault(e);
@@ -29,6 +31,7 @@ const App = () => {
     }, []);
     const onDrop = useCallback((e) => {
         setDragInActive(e);
+        setIsUploaded(true);
         console.log(e.dataTransfer.files);
     }, []);
     return (
@@ -38,7 +41,7 @@ const App = () => {
             action=""
             encType="multipart/form-data"
         >
-            <input type="file" name="files[]" className={classes.fileInput} />
+            <input type="file" name="files[]" className={classes.noDisplay} />
             <div
                 /*id="inner-box"*/ className={`${classes.innerBox}${
                     isFileDraggedOver ? ` ${classes.innerBox_drag}` : ''
@@ -48,7 +51,22 @@ const App = () => {
                 onDragEnd={setDragInActive}
                 onDragOver={setDragActive}
                 onDrop={onDrop}
-            />
+            >
+                <svg
+                    className={`${classes.loadingContainer}${
+                        isUploaded ? '' : ` ${classes.noDisplay}`
+                    }`}
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <circle
+                        className={classes.loadingCircle}
+                        cx="50"
+                        cy="50"
+                        r="45"
+                    />
+                </svg>
+            </div>
         </form>
     );
 };
