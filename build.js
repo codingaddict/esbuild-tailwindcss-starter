@@ -1,6 +1,10 @@
 const esbuild = require('esbuild');
 const open = require('open');
 const postCssPlugin = require('esbuild-plugin-postcss2').default;
+// Ensure tailwindcss is running watch in dev mode
+process.env.NODE_ENV = 'development';
+process.env.TAILWIND_MODE = 'watch';
+// Serve with esbuild
 esbuild
     .serve(
         { servedir: 'dist', port: 3000 },
@@ -13,9 +17,6 @@ esbuild
             logLimit: 0,
             bundle: true,
             sourcemap: true,
-            define: {
-                'process.env.NODE_ENV': '"development"',
-            },
             // watch: {
             //   onRebuild(error, result) {
             //     if (error) console.error("watch build failed:", error);
