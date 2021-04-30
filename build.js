@@ -17,6 +17,7 @@ esbuild
             logLimit: 0,
             bundle: true,
             sourcemap: true,
+            inject: ['./react-shim.js'],
             // watch: {
             //   onRebuild(error, result) {
             //     if (error) console.error("watch build failed:", error);
