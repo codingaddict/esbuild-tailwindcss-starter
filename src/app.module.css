@@ -1,0 +1,4 @@
+.root {
+    position: relative;
+    @apply centered-flex w-screen h-screen;
+}
