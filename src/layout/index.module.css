@@ -1,0 +1,35 @@
+.root {
+    flex: 1;
+    align-self: stretch;
+    display: grid;
+    grid-template-rows: 30px 30px 1fr;
+}
+.menuBar {
+    background-color: darkgray;
+}
+.quickutilsBar {
+    background-color: dimgray;
+}
+.workspace {
+    display: flex;
+    overflow: hidden;
+}
+.mainarea {
+    max-width: 75%;
+    display: flex;
+    flex: 1;
+}
+.sidebar {
+    background-color: darkgray;
+    resize: horizontal;
+    overflow: auto;
+    min-width: 25%;
+}
+.drawBoard {
+    background: lightgray;
+    flex: 1;
+}
+.propertiesBar {
+    background-color: gray;
+    width: 25%;
+}
