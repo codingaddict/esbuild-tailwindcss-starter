@@ -1,0 +1,29 @@
+.root {
+    display: flex;
+    flex-direction: column;
+}
+.children {
+    overflow: hidden;
+    transition: max-height 0.25s ease-in-out;
+}
+.childrenHidden {
+    composes: children;
+    max-height: 0px;
+}
+.childrenShow {
+    composes: children;
+    max-height: 200px;
+}
+.header {
+    flex: 1;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chevron {
+    cursor: pointer;
+    & svg {
+        width: 20px;
+    }
+}

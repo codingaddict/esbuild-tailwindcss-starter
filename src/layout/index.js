@@ -1,4 +1,5 @@
 import classes from './index.module.css';
+import Panel from 'panel';
 const Layout = () => {
     return (
         <div className={classes.root}>
@@ -6,7 +7,9 @@ const Layout = () => {
             <div className={classes.quickutilsBar} />
             <div className={classes.workspace}>
                 <div className={classes.mainarea}>
-                    <div className={classes.sidebar} />
+                    <div className={classes.sidebar}>
+                        <Panel />
+                    </div>
                     <div className={classes.drawBoard}>
                         <div className={classes.canvasContainer} />
                         <div className={classes.pagenavigationBar} />

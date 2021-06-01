@@ -26,6 +26,7 @@ esbuild
             // },
             loader: {
                 '.js': 'jsx',
+                '.svg': 'dataurl',
             },
             plugins: [
                 postCssPlugin({
