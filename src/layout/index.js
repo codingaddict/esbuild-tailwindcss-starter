@@ -1,5 +1,6 @@
 import classes from './index.module.css';
 import Panel from 'panel';
+import PropertiesBar from 'properties-bar';
 const Layout = () => {
     return (
         <div className={classes.root}>
@@ -15,7 +16,9 @@ const Layout = () => {
                         <div className={classes.pagenavigationBar} />
                     </div>
                 </div>
-                <div className={classes.propertiesBar} />
+                <div className={classes.propertiesBar}>
+                    <PropertiesBar />
+                </div>
             </div>
         </div>
     );

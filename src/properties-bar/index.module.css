@@ -1,0 +1,73 @@
+.root {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: gray;
+    align-items: center;
+}
+.menu {
+    top: 5px;
+    z-index: 99;
+    transition: top 0.2s linear;
+    position: sticky;
+    align-self: flex-end;
+    margin: 0px 10px;
+    color: lightgray;
+}
+.stickyMenu {
+    top: 15px;
+}
+.logo {
+    flex: 1;
+    margin: 10px 0px;
+    width: 80%;
+    min-height: 100px;
+    background: lightgray;
+}
+.searchbar {
+    top: 0px;
+    position: sticky;
+    margin-bottom: 50px;
+    transition: margin-bottom 0.2s linear;
+    align-self: stretch;
+    padding: 10px 20px;
+    background: inherit;
+    & .textbox {
+        &:focus {
+            border-color: darkgray;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: darkgray 0px 0px 0px 1px inset;
+        }
+        border-radius: 5px;
+        width: 100%;
+        transition: width 0.2s linear;
+        padding: 8px;
+        font-size: 15px;
+        border: 1px solid darkgray;
+        background: inherit;
+        -webkit-appearance: none;
+    }
+}
+.stickySearchbar {
+    margin-bottom: 0px;
+    & .textbox {
+        width: 95%;
+    }
+}
+.tiles {
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+    padding: 10px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    & .tile {
+        width: 45%;
+        min-height: 75px;
+        background: lightgray;
+        margin-bottom: 12px;
+    }
+}
